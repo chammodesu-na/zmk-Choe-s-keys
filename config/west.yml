@@ -2,15 +2,19 @@ manifest:
   remotes:
     - name: zmkfirmware
       url-base: https://github.com/zmkfirmware
-    - name: AYM1607
-      url-base: https://github.com/AYM1607
+    # 👇 [추가 1] 드라이버가 있는 외부 저장소 주소 등록
+    - name: badjeff
+      url-base: https://github.com/badjeff
+
   projects:
     - name: zmk
       remote: zmkfirmware
       revision: main
       import: app/west.yml
-    - name: zmk-driver-azoteq-iqs5xx
-      remote: AYM1607
+    # 👇 [추가 2] 위에서 등록한 곳에서 'zmk-drivers' 프로젝트를 가져옴
+    - name: zmk-drivers
+      remote: badjeff
       revision: main
+
   self:
     path: config
