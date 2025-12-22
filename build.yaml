@@ -14,8 +14,9 @@
 include:
   - board: nice_nano
     shield: corne_left
+    cmake-args: -DCONFIG_ZMK_MODULE_ROOTS=../../zmk-driver-azoteq-iqs5xx
   - board: nice_nano
     shield: corne_right
     snippet: studio-rpc-usb-uart
     # 👇 모듈 추가 설정이 필요한 경우
-    cmake-args: -DCONFIG_ZMK_MODULE_ROOTS="/__w/zmk-Choe-s-keys/zmk-Choe-s-keys/zmk-driver-azoteq-iqs5xx"
+    cmake-args: -DCONFIG_ZMK_MODULE_ROOTS=../../zmk-driver-azoteq-iqs5xx
