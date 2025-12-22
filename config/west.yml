@@ -12,5 +12,6 @@ manifest:
     - name: zmk-driver-azoteq-iqs5xx
       remote: AYM1607
       revision: main
+      import: true  # <--- 이 줄이 반드시 있어야 설정 파일이 로드됩니다!
   self:
     path: config
