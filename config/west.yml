@@ -2,16 +2,14 @@ manifest:
   remotes:
     - name: zmkfirmware
       url-base: https://github.com/zmkfirmware
-    # 👇 [수정] badjeff 대신 작동하는 저장소(AYM1607) 등록
     - name: AYM1607
       url-base: https://github.com/AYM1607
 
   projects:
     - name: zmk
       remote: zmkfirmware
-      revision: main
+      revision: v0.3  # 👈 [핵심] 여기를 main에서 v0.3으로 변경
       import: app/west.yml
-    # 👇 [수정] 프로젝트 이름과 원격 저장소 이름 변경
     - name: zmk-driver-azoteq-iqs5xx
       remote: AYM1607
       revision: main
