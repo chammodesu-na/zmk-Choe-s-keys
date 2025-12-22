@@ -4,15 +4,13 @@ manifest:
       url-base: https://github.com/zmkfirmware
     - name: AYM1607
       url-base: https://github.com/AYM1607
-
   projects:
     - name: zmk
       remote: zmkfirmware
-      revision: v0.3  # 👈 [핵심] 여기를 main에서 v0.3으로 변경
+      revision: v0.3
       import: app/west.yml
     - name: zmk-driver-azoteq-iqs5xx
       remote: AYM1607
       revision: main
-
   self:
     path: config
