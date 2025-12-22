@@ -1,10 +1,10 @@
 include:
   - board: nice_nano
     shield: corne_left
-    # 👇 트랙패드 드라이버 경로 (절대 경로)
-    cmake-args: -DCONFIG_ZMK_MODULE_ROOTS="/__w/zmk-Choe-s-keys/zmk-Choe-s-keys/zmk-driver-azoteq-iqs5xx"
+    # 👇 [수정] 명령어를 'ZEPHYR_EXTRA_MODULES'로 변경 (이게 표준입니다)
+    cmake-args: -DZEPHYR_EXTRA_MODULES="/__w/zmk-Choe-s-keys/zmk-Choe-s-keys/zmk-driver-azoteq-iqs5xx"
 
   - board: nice_nano
     shield: corne_right
-    # 👇 트랙패드 드라이버 경로 (절대 경로)
-    cmake-args: -DCONFIG_ZMK_MODULE_ROOTS="/__w/zmk-Choe-s-keys/zmk-Choe-s-keys/zmk-driver-azoteq-iqs5xx"
+    # 👇 [수정] 오른쪽도 똑같이 변경
+    cmake-args: -DZEPHYR_EXTRA_MODULES="/__w/zmk-Choe-s-keys/zmk-Choe-s-keys/zmk-driver-azoteq-iqs5xx"
