@@ -1,10 +1,6 @@
 include:
-  - board: nice_nano
+  - board: nice_nano_v2  # 👈 v0.3에서는 v2가 맞습니다.
     shield: corne_left
-    # 👇 [수정] 명령어를 'ZEPHYR_EXTRA_MODULES'로 변경 (이게 표준입니다)
-    cmake-args: -DZEPHYR_EXTRA_MODULES="/__w/zmk-Choe-s-keys/zmk-Choe-s-keys/zmk-driver-azoteq-iqs5xx"
 
-  - board: nice_nano
+  - board: nice_nano_v2
     shield: corne_right
-    # 👇 [수정] 오른쪽도 똑같이 변경
-    cmake-args: -DZEPHYR_EXTRA_MODULES="/__w/zmk-Choe-s-keys/zmk-Choe-s-keys/zmk-driver-azoteq-iqs5xx"
