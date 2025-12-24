@@ -1,7 +1,7 @@
 /*
- * Corne Keymap (Converted from VIAL)
+ * Corne Keymap
+ * - Layer 1 (Lower): IJKL -> Arrow Keys (Up, Left, Down, Right)
  * - Removed: Passwords, Combos
- * - Included: Mouse keys, Tap-Dances, Layers
  */
 
 #include <behaviors.dtsi>
@@ -10,23 +10,18 @@
 #include <dt-bindings/zmk/mouse.h>
 
 / {
-    /* 1. 매크로 정의 (비밀번호 제외, 안전한 매크로만 유지) */
+    /* 1. 매크로 정의 */
     macros {
-        /* M0: 한글/한자 변환용 (Alt+H, A, C) */
         m0_hanja: m0_hanja {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings = <&kp LALT &kp H &kp A &kp C>;
         };
-        
-        /* M1: 방향키 매크로 (Alt+H, Down...) */
         m1_nav: m1_nav {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings = <&kp LALT &kp H &kp DOWN &kp DOWN &kp RIGHT &kp UP &kp RIGHT &kp RET>;
         };
-
-        /* M5: hfp 텍스트 입력 */
         m5_hfp: m5_hfp {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
@@ -34,17 +29,14 @@
         };
     };
 
-    /* 2. 탭댄스 정의 (VIAL TD 기능 이식) */
+    /* 2. 탭댄스 정의 */
     behaviors {
-        /* TD4: 탭=TAB, 두번탭=ESC */
         td_tab_esc: tap_dance_tab_esc {
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
             tapping-term-ms = <200>;
             bindings = <&kp TAB>, <&kp ESC>;
         };
-
-        /* TD7: 탭=.(점), 두번탭=Meh+.(점) */
         td_dot_meh: tap_dance_dot_meh {
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
@@ -66,11 +58,13 @@
             >;
         };
 
-        /* Layer 1: 마우스 및 내비게이션 (Mouse & Nav) */
+        /* Layer 1: 방향키 및 마우스 (Nav & Mouse)
+           - Right Side Modified: I(Up), J(Left), K(Down), L(Right)
+         */
         lower_layer {
             bindings = <
-    &kp LC(LA(TAB)) &kp LS(LC(F24)) &msc SCRL_LEFT &mmv MOVE_UP   &msc SCRL_RIGHT &mkp MB4         &mkp MB4  &mkp RCLK  &mmv MOVE_UP   &msc SCRL_UP    &kp LS(LC(F24)) &kp LC(LA(TAB))
-    &kp LCTRL       &kp DEL         &mmv MOVE_LEFT &mmv MOVE_DOWN &mmv MOVE_RIGHT &kp RET          &kp RET   &mmv MOVE_RIGHT &mmv MOVE_DOWN &mmv MOVE_LEFT  &kp DEL         &kp LCTRL
+    &kp LC(LA(TAB)) &kp LS(LC(F24)) &msc SCRL_LEFT &mmv MOVE_UP   &msc SCRL_RIGHT &mkp MB4         &mkp MB4  &mkp RCLK  &kp UP     &msc SCRL_UP    &kp LS(LC(F24)) &kp LC(LA(TAB))
+    &kp LCTRL       &kp DEL         &mmv MOVE_LEFT &mmv MOVE_DOWN &mmv MOVE_RIGHT &kp RET          &kp RET   &kp LEFT   &kp DOWN   &kp RIGHT       &kp DEL         &kp LCTRL
     &kp LSHFT       &kp F24         &msc SCRL_UP   &kp LA(LC(SQT)) &msc SCRL_DOWN &kp LC(LA(V))    &kp LC(LA(V)) &msc SCRL_DOWN &kp LA(LC(SQT)) &msc SCRL_UP &kp F24    &kp LSHFT
                                     &kp LGUI       &trans          &kp LALT                        &kp LALT  &trans     &mo 3
             >;
@@ -106,7 +100,7 @@
             >;
         };
 
-        /* Layer 5: (비어있음 - 비밀번호 삭제됨) */
+        /* Layer 5: (비어있음) */
         layer_5 {
             bindings = <
     &trans  &trans  &trans   &trans   &trans  &trans       &trans  &trans   &trans  &trans  &trans  &trans
