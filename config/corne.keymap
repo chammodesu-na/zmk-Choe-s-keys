@@ -1,43 +1,43 @@
-/*
+,*
  * Corne Keymap
- * - Layer 1 (Lower): IJKL -> Arrow Keys (Up, Left, Down, Right)
- * - Removed: Passwords, Combos
- */
+ * - Layer 1 (Lower)- IJKL -> Arrow Keys (Up, Left, Down, Right)
+ * - Removed- Passwords, Combos
+ *,
 
 #include <behaviors.dtsi>
-#include <dt-bindings/zmk/keys.h>
-#include <dt-bindings/zmk/bt.h>
-#include <dt-bindings/zmk/mouse.h>
+#include <dt-bindings,zmk,keys.h>
+#include <dt-bindings,zmk,bt.h>
+#include <dt-bindings,zmk,mouse.h>
 
-/ {
-    /* 1. 매크로 정의 */
+, {
+    ,* 1. 매크로 정의 *,
     macros {
-        m0_hanja: m0_hanja {
+        m0_hanja- m0_hanja {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings = <&kp LALT &kp H &kp A &kp C>;
         };
-        m1_nav: m1_nav {
+        m1_nav- m1_nav {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings = <&kp LALT &kp H &kp DOWN &kp DOWN &kp RIGHT &kp UP &kp RIGHT &kp RET>;
         };
-        m5_hfp: m5_hfp {
+        m5_hfp- m5_hfp {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings = <&kp LALT &kp H &kp F &kp P>;
         };
     };
 
-    /* 2. 탭댄스 정의 */
+    ,* 2. 탭댄스 정의 *,
     behaviors {
-        td_tab_esc: tap_dance_tab_esc {
+        td_tab_esc- tap_dance_tab_esc {
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
             tapping-term-ms = <200>;
             bindings = <&kp TAB>, <&kp ESC>;
         };
-        td_dot_meh: tap_dance_dot_meh {
+        td_dot_meh- tap_dance_dot_meh {
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
             tapping-term-ms = <180>;
@@ -48,7 +48,7 @@
     keymap {
         compatible = "zmk,keymap";
 
-        /* Layer 0: 기본 (Base) */
+        ,* Layer 0- 기본 (Base) *,
         default_layer {
             bindings = <
     &td_tab_esc     &kp Q   &kp W   &kp E     &kp R        &kp T            &kp Y      &kp U   &kp I      &kp O     &kp P            &kp BSPC
@@ -58,9 +58,9 @@
             >;
         };
 
-        /* Layer 1: 방향키 및 마우스 (Nav & Mouse)
-           - Right Side Modified: I(Up), J(Left), K(Down), L(Right)
-         */
+        ,* Layer 1- 방향키 및 마우스 (Nav & Mouse)
+           - Right Side Modified- I(Up), J(Left), K(Down), L(Right)
+         *,
         lower_layer {
             bindings = <
     &kp LC(LA(TAB)) &kp LS(LC(F24)) &msc SCRL_LEFT &mmv MOVE_UP   &msc SCRL_RIGHT &mkp MB4         &mkp MB4  &mkp RCLK  &kp UP     &msc SCRL_UP    &kp LS(LC(F24)) &kp LC(LA(TAB))
@@ -70,7 +70,7 @@
             >;
         };
 
-        /* Layer 2: 숫자패드 (Numpad) */
+        ,* Layer 2- 숫자패드 (Numpad) *,
         raise_layer {
             bindings = <
     &kp ESC    &kp N1    &kp N2     &kp N3     &kp N4     &kp N5        &kp N6      &kp N7    &kp N8    &kp N9    &kp N0     &kp BSPC
@@ -80,7 +80,7 @@
             >;
         };
 
-        /* Layer 3: 펑션키 (F-Keys) */
+        ,* Layer 3- 펑션키 (F-Keys) *,
         adjust_layer {
             bindings = <
     &kp LS(TAB) &kp F1   &kp F2    &kp F3     &kp F4     &kp F5        &kp F6     &kp F7    &kp F8    &kp F9    &kp F10    &kp F11
@@ -90,7 +90,7 @@
             >;
         };
 
-        /* Layer 4: 스크롤 및 추가 기능 (Scroll & Extra) */
+        ,* Layer 4- 스크롤 및 추가 기능 (Scroll & Extra) *,
         layer_4 {
             bindings = <
     &td_tab_esc &kp LS(LC(F24)) &msc SCRL_LEFT &mmv MOVE_UP &msc SCRL_RIGHT &mkp MB4   &mkp MB4 &mkp RCLK &kp PG_UP &kp UP &kp BSPC &trans
@@ -100,7 +100,7 @@
             >;
         };
 
-        /* Layer 5: (비어있음) */
+        ,* Layer 5- (비어있음) *,
         layer_5 {
             bindings = <
     &trans  &trans  &trans   &trans   &trans  &trans       &trans  &trans   &trans  &trans  &trans  &trans
