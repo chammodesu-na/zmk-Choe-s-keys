@@ -6,7 +6,7 @@ include:
     shield: corne_right
 
     # 기존 왼쪽/오른쪽 빌드 설정 아래에 추가
-- board: nice_nano_v2
-  shield: corne_left  # ★중요: 동글로 쓸 쉴드 이름 (보통 왼쪽 쉴드 설정을 빌려옴)
-  cmake-args: -DCONFIG_ZMK_SPLIT_ROLE_CENTRAL=y -DCONFIG_ZMK_SPLIT_BLE_CENTRAL_PERIPHERALS=2
-  artifact-name: dongle_firmware
+  - board: nice_nano_v2
+    shield: corne_left  # ★중요: 동글로 쓸 쉴드 이름 (보통 왼쪽 쉴드 설정을 빌려옴)
+    cmake-args: -DCONFIG_ZMK_SPLIT_ROLE_CENTRAL=y -DCONFIG_ZMK_SPLIT_BLE_CENTRAL_PERIPHERALS=2
+    artifact-name: dongle_firmware
