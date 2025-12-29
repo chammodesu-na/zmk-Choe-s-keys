@@ -7,7 +7,7 @@ include:
     
   - board: seeeduino_xiao_ble
     shield: dongle
-    cmake-args: -DCONFIG_ZMK_SPLIT_ROLE_CENTRAL=y -DCONFIG_ZMK_SPLIT_BLE_CENTRAL_PERIPHERALS=2
+    cmake-args: -DCONFIG_ZMK_SPLIT_ROLE_CENTRAL=y
     artifact-name: dongle
 
   - board: nice_nano_v2
