@@ -14,10 +14,3 @@
         events = <0>;
     };
 };
-
-/* [핵심] USB 하드웨어를 '시리얼 포트'로 쓰겠다고 정의 */
-&zephyr_udc0 {
-    cdc_acm_uart: cdc_acm_uart {
-        compatible = "zephyr,cdc-acm-uart";
-    };
-};
