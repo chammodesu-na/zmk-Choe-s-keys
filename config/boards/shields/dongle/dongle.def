@@ -1,0 +1,5 @@
+# dongle.def 파일 내용
+if SHIELD_DONGLE
+config ZMK_KEYBOARD_NAME
+	default "Dongle"
+endif
