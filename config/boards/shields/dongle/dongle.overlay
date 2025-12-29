@@ -1,10 +1,8 @@
 /* dongle.overlay */
 / {
     chosen {
-        /* 가상의 키 스캔 (동글은 키가 없으니까) */
         zmk,kscan = &mock_kscan;
-        /* [중요] 로그를 뱉을 통로로 USB 시리얼(cdc_acm_uart)을 선택 */
-        zephyr,console = &cdc_acm_uart;
+        /* console 설정은 스니펫한테 맡기고 비워둡니다 */
     };
 
     mock_kscan: kscan_0 {
@@ -12,5 +10,13 @@
         columns = <0>;
         rows = <0>;
         events = <0>;
+    };
+};
+
+/* [핵심] 아까 지우라고 했던 이 부분을 다시 넣어야 합니다! */
+/* USB 컨트롤러에 가상의 시리얼 포트(cdc_acm_uart)를 달아주는 코드 */
+&zephyr_udc0 {
+    cdc_acm_uart: cdc_acm_uart {
+        compatible = "zephyr,cdc-acm-uart";
     };
 };
