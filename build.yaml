@@ -8,7 +8,7 @@ include:
   - board: seeeduino_xiao_ble
     shield: dongle
     snippet: studio-rpc-usb-uart
-    cmake-args: -DCONFIG_ZMK_SPLIT=y -DCONFIG_ZMK_SPLIT_BLE=y -DCONFIG_ZMK_SPLIT_ROLE_CENTRAL=y -DCONFIG_ZMK_SPLIT_BLE_CENTRAL_PERIPHERALS=2
+    cmake-args: -DCONFIG_ZMK_USB_LOGGING=n -DCONFIG_SERIAL=n -DCONFIG_CONSOLE=n -DCONFIG_UART_CONSOLE=n -DCONFIG_ZMK_SPLIT=y -DCONFIG_ZMK_SPLIT_BLE=y -DCONFIG_ZMK_SPLIT_ROLE_CENTRAL=y -DCONFIG_ZMK_SPLIT_BLE_CENTRAL_PERIPHERALS=2
     artifact-name: dongle
 
   - board: nice_nano_v2
